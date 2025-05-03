@@ -1,0 +1,62 @@
+what will we learn today
+
+-how to run python code
+-print() function
+-variables and basic data types
+-simple math operation
+
+1. hello world! 
+in python, print() is used to show output
+
+print("Hello, ai world!")
+
+output
+Hello, ai world!
+
+2. variables in python
+variables store information
+
+name = "alice"
+age = 25
+height = 5.6
+
+name is a string
+age is an integer
+height is a float(decimal number)
+
+we can print them as
+print("Name: ", name)
+print("Age: ", age)
+print("Height: ", height)
+
+3. Basic math in python
+we can do simple math:
+
+a = 10
+b = 3
+
+print("Addition: ", a+b)
+print("Subtraction: ", a-b)
+print("Multiplication: ", a*b)
+print("Division: ", a/b)
+print("Modulus: ", a%b)
+
+practice time! (do these on your own)
+1. print your own name and age using variables.
+2. create two numbers and :
+-add them
+-multiply them
+-find remainder
+
+3. create a variable year_of_birth and calculate your age using:
+current_year = 2025
+
+#challenges (optional)
+
+write a python program that asks the user for their name and age and then print
+
+hi [name], you will be [age+1] next year!
+
+hint 
+name = input("what is your name? ")
+age = int(input("what is your age? ")) 
