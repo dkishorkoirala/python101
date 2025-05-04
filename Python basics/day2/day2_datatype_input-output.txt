@@ -1,0 +1,53 @@
+review: we will learn
+data types: (int , float, str, bool)
+user input using input()
+type conversion
+
+1. data type in python:
+a = 10 #int
+b= 3.14 #float
+name = "alice" #str
+is_ai = True #bool
+
+check the type
+print (type(a))     #<class 'int'>
+print (type(name))  #<class 'str'>
+
+2. getting input from user
+name = input("enter your name: ")
+print("hello", name)
+
+the default input() is string
+
+3. convering input to numbers
+age = int (input("enter your age: "))
+print("next year you'll be", age + 1)
+
+other ex.
+height = float(input("enter your height in meters: "))
+print("you etered", height, "meters.")
+
+Practice Tasks:
+Ask the user for their name and birth year, and calculate their age.
+
+Take two numbers from the user:
+
+Print their sum
+
+Print their product
+
+Print their average
+
+Mini-Challenge
+Ask:
+
+Name
+
+Age
+
+Favorite number
+
+Then print:
+Hi [name], you're [age] years old.
+Your favorite number doubled is [fav_number * 2].
+
