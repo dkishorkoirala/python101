@@ -21,7 +21,7 @@ age = int(input("Enter age: "))
 if age < 13:
     print("You are a Child")
 elif age >= 13 and age <= 19:
-    print("You are a Tee")
+    print("You are a Teen")
 else:
     print("You are an adult")
 
