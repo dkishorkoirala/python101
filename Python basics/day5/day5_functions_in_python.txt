@@ -1,0 +1,46 @@
+what is function?
+a function is a named block of code that performs a specific task.
+
+syntax:
+def function_name(parameters):
+    # code to be executed
+    return result(optional)
+
+example 1: basic function(no parameters)
+def greet():
+    print("hello from the user")
+
+greet() # calling the function
+
+
+example 2: function with parameters
+
+def add(a, b):
+    result = a+ b;
+    print("sum: ", result)
+
+add(5, 7) # calling the function with parameters
+
+example 3: function with return value
+
+def multiply(x, y):
+    return x * y
+
+product = multiply(5, 6)
+print("Product: ", product)
+
+why use function?
+reusability
+clean code
+easy debug
+logical structure
+
+tasks 
+
+task 1: create function greet_user() that prints a welcome message
+task 2: create a function square(n) that returns the square of a number
+task 3: create a function is_even(n), that checks if a number is even or odd
+
+task 4 (challenge): create a function calculator(a, b , op) that does +, -, *, / based on op.
+
+
