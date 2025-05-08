@@ -1,0 +1,29 @@
+list stores multiple items in a single variable.
+ex.
+
+fruits = ["apple", "Banana", "Cherry"]
+print(fruits[0]) # prints: apple
+fruits.append("orange") #add orange to the list
+print(fruits)
+
+task:
+create a list of your 5 favourite ai tools, print the 3rd one.
+
+Tuples are like list, but you can't change them at once created
+
+coordinates = (4 , 5)
+print(coordinates[0]) # prints: 4
+
+task:
+create a tuple with 3 cities you'd like to work as a data scientist.
+
+
+list v/s tuple - why it matters in ai
+-use lists when data needs to change (eg. model predictions)
+-use tuples when data shoudl stay constant( eg. model input shape)
+
+mini challenge
+wap to 
+1. ask the user for 5 numbers
+2. store them in a list
+3. print the list and the sum of all numbers
