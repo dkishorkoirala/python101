@@ -1,0 +1,52 @@
+1. Dictionary- storing key-value pairs
+dictionaries are used to store data values in key-value pairs
+
+ex. 
+person = {
+    "name": "Dibash",
+    "age": 30,
+    "city": "Biratnagar"
+}
+
+print(person["name"]) # Output: Dibash
+
+2. sets- unique and unordered collections
+sets are used to store multiple items in a single variable. No duplicates allowed.
+ex.
+fruits = {"apple", "banana", "cherry", "apple", "banana"}
+print(fruits)
+# Output: {'apple', 'banana', 'cherry'}
+
+3. mini project -contact book
+we'll create a simple contact book using a dictionary.
+ex.
+
+contact = {}
+
+while True:
+    print("\n1. Add contact\n2. View Contact\n3. Exit")
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        name = input("Enter name: ")
+        phone = input("Enter phone number: ")
+        contact[name] = phone
+        print(f"Contact {name} added successfully!")
+    
+    elif choice == "2":
+        name = input("Enter name to search: ")
+        if name in contact:
+            print(f"Phone number of {name} is {contact[name]}")
+        else:
+            print("Contact not found!!!")
+    elif choice == "3":
+        break
+    
+    else:
+        print("Invalid choice.")
+
+task:
+1. write a dictionary of your favourite 3 books and authors.
+2. create a set of 5 of your favourite fruits and print them.
+3. try the contact book mini project above.
+|
