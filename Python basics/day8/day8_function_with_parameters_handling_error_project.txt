@@ -1,0 +1,53 @@
+today focus:
+1. function with parameters and return value
+2. handling errors using try-except
+3. mini project
+
+1. function with parameters & return value
+def add(a, b):
+    return a + b
+result = add(5, 7)
+print("The sum of numbers : ", result)
+
+this function accepts two numbers and returns their sum
+
+2. handling errors using try-except
+
+try:
+    num = int(input("Enter a number: "))
+    print("You entered: ", num)
+except ValueError:
+    print("That's not a valid number!")
+
+this prevents the program from crashing when wrong input is given
+
+3. mini project: smart calculator with error handling
+
+def calculator(a, b, op):
+    try:
+        if op = "+":
+            return a + b
+        elif op = "-":
+            return a - b
+        elif op = "*":
+            return a * b
+        elif op = "/":
+            return a / b
+        else :
+            return "Invalid operator"
+    except zeroDivisionError:
+        return "Error: Division by zero is not allowed"
+
+#take input from user
+try: 
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+    operator = input("Enter operator (+, -, *, /): ")
+    print("Result: ", calculator(num1, num2, operator))
+except ValueError:
+    print("Invalid input. please enter numeric value")
+
+task:
+1. create function multiply(z, y) that returns the product of two numbers
+2. Add a try-except block that catches division by zero in a / operation.
+3. Build a simple calculator that can loop and perform operations until the user types exit.
