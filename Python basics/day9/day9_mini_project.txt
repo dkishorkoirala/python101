@@ -1,0 +1,145 @@
+simple but powerful mini project athat uses:
+-function
+-loops
+-lists
+-dictionaries
+-conditionals
+-input/output
+
+Project 1: Simple task manager (Todo list)
+
+Features:
+1. add a new task
+2. view all tasks
+3. Mark task as completed
+4. Delete task
+5. Exit
+
+before we start:We'll store each task as a dictionary
+task = {
+    "title":"Buy groceries"
+    "completed":False
+}
+
+all task will be stored in a list:
+
+tasks = []
+
+step 1: Basic setup with menu and task list
+
+tasks = []
+
+def show_menu():
+    print("\n--Task Manager--")
+    print("1. Add task")
+    print("2. View tasks")
+    print("3. Mark task as completed")
+    print("4. Delete task")
+    print("5. Exit")
+
+while True:
+    show_menu()
+    choice = input("Enter your choice(1-5): ")
+
+    if choice == "1":
+        title = input("Enter task title: ")
+        task = {"title" : title, "completed" : False}
+        tasks.append(task)
+        print(f"Task '{title}' added successfully!")
+
+    elif choice == "2":
+        if not tasks:
+            print("No task found")
+        else:
+            print("\nYour Task: ")
+            if idx, task in enumerate(tasks, start = 1):
+                status = "✔" if task["completed"] else "❌"
+                print(f"{idx}. {task['title']} ({status})")
+    
+    elif choice == "3":
+        num = int (input("Enter task number to mark as completed: "))
+        if 1 <= num <= len(tasks):
+            tasks[num - 1]["completed"] = True
+            print("Task marked as completed")
+        else:
+            print("Invalid task number.")
+    
+    elif choice == "4"
+        num = int(input("Enter the task number to delete: "))
+        if 1 <= num <= len(tasks):
+            removed = tasks.pop(num - 1)
+            print(f"Task '{removed['title']}' deleted successfully!")
+        else: 
+            print("Invalid task number.")
+    
+    elif choice == "5":
+        print("Exiting Task Manager...")
+        break
+
+    else:
+        print("Invalid choice. please try again...")
+
+
+------------------------------------------------------------------------------
+
+project 2: Simple Banking App (console-based)
+
+Features:
+1. creating account
+2. Check Balance
+3. Deposit Money
+4. Withdraw Money
+5. Exit
+
+we'll use a dictionary to store a single account, and simulate banking operations.
+
+account = {
+    "name" : "",
+    "balance" : 0.0
+}
+
+def create_account():
+    account["name"] = input("\nEnter account holder's name: ")
+    account["balance"] = float(input("Enter initial balance: "))
+    print(f"\nAccount created for {account['name']} with balance ${account['balance']}")
+
+def check_balance():
+    print(f"\nAccount holder name is {account['name']}")
+    print(f"Current Balance: ${account['balance']}")
+
+def deposit():
+    amount = float(input("Enter amount to deposit: $"))
+    if amount > 0:
+        account["balance"] += amount
+        print(f"\nDeposited ${amount}. New balance is ${account['balance']}")
+    else:
+        print("\nInvalid amount. Please enter a positive number.")
+
+def withdrawl():
+    amount = float(input("\nEnter amount to withdraw: $"))
+    if amount <= account["balance"]:
+        account["balance"] -= amount
+        print(f"\nWithdrawn ${amount}. Remaining balance is ${account['balance']}")
+    else: 
+        print("\nInsufficient balance. Please try again.")
+
+while True:
+    print("\n........................Simple banking app........................")
+    print("1. Create Account\n2. Check Balance\n3. Deposit\n4. Withdraw\n5. Exit")
+
+    choice = input("\nEnter your Option: ")
+
+    if choice == "1":
+        create_account()
+    elif choice == "2":
+        check_balance()
+    elif choice == "3":
+        deposit()
+    elif choice == "4":
+        withdrawl()
+    elif choice == "5":
+        print("\nExiting the app. .. ...\n")
+        break
+    else:
+        print("\nInvalid option. Please try again.")
+
