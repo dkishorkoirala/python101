@@ -1,0 +1,160 @@
+we will learn here:
+-classes and objects
+-attributes and methods
+-__init__ constructor
+- inheritance and polymorphism
+-encapsulation and abstraction
+
+1. what is OOP?
+object-oriented Programming (oop) is a programming paradigm that organizes code into 
+classes and objects, making it easier to model real-world systems and concepts.
+
+class- A blueprint for creating objects
+Object: an instance of a class
+
+2. defining a class and creating objects:
+creating a simple class Person:
+
+class Person:
+    def __init__(self, name, age): #constructor method
+        self.name = name #instance attribute
+        self.age = age #instance attribute
+
+    def greet(self):#method
+        print(f"Hello, my name is {self.name} and I am {self.age} years old.")
+
+#creating (objects) instance of the class
+person1 = person("John", 25)
+person2 = person("Jane", 30)
+
+#accessing the object's atttributes and methods
+person1.greet() #output: Hello, my name is John and I am 25 years old.
+person2.greet() #output: Hello, my name is Jane and I am 30 years old.
+
+explaination:
+__init__: a constructor method that initializes the object's attributes.
+self: refers to the current instance of the object
+
+3. Attributes and methods
+-attribute: variables that belong to the class (eg. name, age)
+-method: functions defined inside the class that can access and modify the attributes.
+
+ex.
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+    
+    def start_engine(self):
+        print(f"The {self.year} {self.make} {self.model} engine is starting...")
+
+#Creating an object
+car1 = Car("Tesla", "Model S", 2022)
+car1.start_engine() #output: The 2022 Tesla Model S engine is starting...
+
+4. Inheritance: Reusing and extending classes
+inheritance allows a class ( child class ) to inherit attributes and methods from another class(parent class)
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print(f"{self.name} make a sound.")
+
+#Dog inherits from animal
+class Dog(Animal): #child class
+    def speak(self): #overriding the parent class speak method
+        print(f"{self.name} barks.")
+
+dog = Dog("Buddy")
+dog.speak() #output: Buddy barks.
+
+explaination:
+overriding: redefining a method in the child class.
+
+5. polymorphism: same method, different behaviour
+polymorphism allows methods to have different behaviour depending on the object type.
+
+class Cat(animal):
+    def speak (self): #overriding the speak method
+        print(f"{self.name} meows!")
+
+animals = [Dog("Rex"), Cat("Whiskeys")]
+
+for animal in animals:
+    animal.speak()
+    #output: Rex barks. Whiskeys meows!
+
+6. Encapsulation: hiding the internal state
+Encapsulation is the concept of restricting access to certain attributes and methods to protect data.
+
+class BankAccount:
+    def __inti__(self, owner, balance=0):
+        self.owner = owner
+        self. __balance = balance #private attribute 
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+        else:
+            print("Invalid amount")
+        
+    def withdrawl(self, amount):
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Invalid withdrawl!!!")
+        
+    def get_balance(self):
+        return self.__balance #accessor method
+
+accout = BankAccount("John")
+accout.deposit(1000)
+accout.withdrawl(500)
+print(accout.get_balance())
+#output: 500
+
+explaination:
+the __balance attribute is private, and can't be accessed directly outside the class.
+
+7. abstraction:
+Abstraction involves hiding the complex implementation details and providing a simple interface for the user
+
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius =radius
+
+    def area(self):
+        return 3.14*self.radius ** 2
+
+circle.Circle(5)
+print(circle.area())
+
+#output : 78.5
+
+explaination:
+ABC and abstractmethod are used to create an abstract base class.
+the area() method must be implented by any subclass
+
+practise exercise:
+
+1. Create a student class with attribute name, age, and grade, and a method to display the student information
+
+2. create a book class with attribute title, author, and price and implement methods for displaying and 
+updating the price
+
+3. Implement inheritance by creating a Vehicle class and the extend it 
+to create  Car and Bike classes with specific attributes and methods.
+
+Challenge:
+Create a Shape class hierarchy with a base class shape and derived classes Circle, Rectanglem and Square.
+each class should have an area() method to calculate the area of the shape.
