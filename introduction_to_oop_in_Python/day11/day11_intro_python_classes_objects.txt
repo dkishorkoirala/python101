@@ -1,0 +1,66 @@
+what will we cover
+-what is class?
+-what is an object?
+-__init__() constructor
+-writing your first real class
+-basic object methods
+-hands on exercises
+
+1. what is class?
+- A class is like a blueprint or template. Think of it like a cookie-cutter
+it defines what every cookie(object) should be shaped like
+
+
+class Dog:
+    pass #we'll add things inside later
+
+2. what is an object?
+an object is a specific thing created using that class. It's like an actual
+ cookie made from the cutter
+
+
+my_dog = Dog()
+print(type(my_dog)) # <class'__main__.Dog'>
+
+3. The __init__() method
+This is special method runs automatically when you create an object. It's 
+used to initialize values.
+
+Class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+now we can create objects with real info:
+
+dog1 = Dog("Buddy", 3)
+dog2 = Dog("Max", 5)
+
+4. Adding a method:(action)
+
+we can define actions our object can do:
+
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print(f"The {self.name} says Woof!")
+    
+now call it
+dog1 = Dog("nakkale")
+dog1.bark()
+#output is : The nakkale says Woof!
+
+5. Homework
+
+write a class called Car with:
+-attribute : brand, year, and price
+-a method display_info() to print these values
+
+Create a class Movie that represent a movie object
+- attribute: title, director, and year
+method
+- display_info() to print these values
+-is_classic() -prints "Classic Movie" if year is before 2000, other wise "Modern Movie"
