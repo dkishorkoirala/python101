@@ -1,0 +1,62 @@
+here we will learn:
+-class vs object(real world view)
+-the __init__() constructor method
+-instance methods
+-attributes vs methods (Difference)
+-recap: creating and using objects
+
+1. class vs object(real world view)
+class is a blueprint (like a design of a car.)
+objects is the actual item built from the blueprint( a real car.)
+
+class Dog:
+    pass
+
+dog1 = Dog()
+dog2 = Dog()
+
+Here, Dog is a class. dog1 and dog2 are two separate objects.(instances)
+
+2. __init__() constructor
+used to setup (initialize) object properties when the object is created.
+
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+
+now we can create a dog with details:
+dog1 = Dog("Buddy", "Golden Retriever")
+dog2 = Dog("Max", "Poodle")
+
+3. Instance methods
+function defined inside a class that use self.
+
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+    
+    def bark(self):
+        print(f"{self.name} says woof!")
+
+dog3 = Dog("Buddy", "Golden Retriever")
+dog3.bark()  # Output: Buddy says woof!
+
+4. attributes vs methods
+
+attributes : data stored in an object ex. self.name, self.age
+methods : functions that that does something with data ex. bark(), eat(), display()
+
+exercise:
+1. create a class Laptop with attributes brand, model and price
+2. add a method show_info() to display laptop details.
+3. create two objects and display their information
+
+challenge: pet class
+create a class pet with:
+- attributes: name, animal_type, age
+- method: speak()-> if animal_type is "dog" print "woof!", if "cat" -> print "meow!" else "Hello!"
+
+then: create 3 pet object(dog, cat, parrot)
+call speak() for each
