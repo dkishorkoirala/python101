@@ -49,4 +49,3 @@ task:
 1. write a dictionary of your favourite 3 books and authors.
 2. create a set of 5 of your favourite fruits and print them.
 3. try the contact book mini project above.
-|

@@ -1,0 +1,75 @@
+we will cover
+-what is inheritance in OOP
+-how to create a child class from a parent class
+-using super() to access parent methods
+-overriding methods in child classes
+
+1. what is inheritance?
+inheritance allows one class (child) to inherit attributes and methods
+form another class(parent)
+
+class Animal:
+    def speak(self):
+        print("animal speaks")
+
+class Dog(Animal):
+    pass
+
+d = Dog()
+d.speak() # output "animal speaks"
+
+-Dog gets the speak() method form Animal without writing it again!
+
+2. using super() to extend behaviour 
+We use super() in child classes to call methods or constructors of the 
+parent  class
+
+class Animal:
+    def __init__ (self, name):
+        self.name = name
+
+    def speak(self):
+        print(f"{self.name} makes a sound")
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)
+        self.breed = breed
+
+    def speak(self):
+        print(f"{self.name} barks. It is a {self.breed}")
+
+d = Dog("Buddy", "Golden retriever")
+d.speak() # output "Buddy barks. It is a Golden retriever"
+
+3. method overriding
+child class can change (override) a method from the parent class.
+
+class Animal:
+    def speak(Self):
+        print ("generic animal sound")
+
+class Cat(Animal):
+    def speak(self):
+        print("meow")
+
+now Cat().speak() will print "meow" instead of "generic animal sound"
+
+practice tasks.
+1. create a class Person with attributes name and age, and a method show_info()
+create a child class Student that inherits from Person and adds an attribute grade
+override the show_info() method to include the grade.
+
+2. create a base class Shape with method area() (print"Calculating area ...")
+create a child class Rectangle that inherits Shape and overrides area()
+to print actual area of a Rectangle using length and width
+
+
+challenge task: Bank system
+create a BankAccount class with:
+- attributes: owner, balance
+-method: deposit(amount), withdrawl(amount), and display()
+
+create a SavingAccount class that inherits from BankAccount and :
+-add an attribute: interest_rate
+-overrides display() to show the interest rate too
