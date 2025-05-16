@@ -1,0 +1,71 @@
+what we'll learn
+-polymorphism and working
+-implementation of encapsulation using private/protected variables
+-writing clean secure, reusable oop code
+-practice + challenges
+
+1. concept: polymorphism (same interface, different implementation)
+
+in python, polymorphism allows objects of different classes to be treated using a common interface
+
+ex. 
+class Dog:
+    def speak(self):
+        print ("woof!")
+
+class Cat:
+    def speak (self):
+        print("mewo!")
+
+def animal_sound(animal):
+    animal.speak()
+
+d = Dog()
+c = Cat
+
+animal_sound(d)
+animal_sound(c)
+
+-animal_sound() works with any object that has a speak() method.
+This is polymorphism
+
+2. concept: Encapsulation (Hiding internal state)
+
+Encapsulation is the concept of restricting direct access to variables in python
+
+_var is protected(by convention)
+__var is private(name mangled).
+
+ex. 
+class Account:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.__balance = balance #private
+    
+    def deposit (self, amount):
+        self.__balance += amount
+    
+    def show_balance(self):
+        print(f"Balance is {self.__balance}")
+
+ac = Account ("Ram", 500)
+ac.deposit(1000)
+ac.show_balance
+# print(ac.__balance)  #will raise error
+
+practice Task:
+1. polymorphism with vehicle class
+-create two classes: car and bike both with start_engine() method.
+then write function to start any vehicle
+
+task2: encapsulation with employee class
+-create an employee class with:
+-public attribute : __salary
+-public method: get_salary() and set_salary() (with protection: only increase allowed)
+
+challenges
+build a library system using oop:
+- class Book with: title, author, __availability
+- method: borrow_book(), return_book(), show_info()
+
+make __availability private only allow borrow if available.
