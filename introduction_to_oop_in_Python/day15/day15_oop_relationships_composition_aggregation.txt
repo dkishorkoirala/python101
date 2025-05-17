@@ -1,0 +1,87 @@
+Day 15: OOP realtionships- composition & aggregation
+
+what we'll cover:
+what is composition in OOP?
+what is Aggregation in OOP
+how are they differ
+Real-world examples in code
+practice and challenges
+
+1. composition?
+"Has-A" realationship where one object owns another.
+if the outer object is deleted, the inner object is also deleted
+
+Ex. A Car has-a Engine. If the car is gone, the engine is useless too
+
+composition ex.
+class Engine:
+    def __init__(self, horsepower):
+        self.horsepower = horsepower
+
+    def start(self):
+        print(f"Engine with {self.horsepower} horsepower started")
+    
+class Car:
+    def __init__(self, brand, horsepower):
+        self.brand = brand
+        self.engine = Engine(horsepower)    #composition here
+    
+    def start_car(self):
+        print (f"{self.brand} car's engine started")
+        self.engine.start()
+
+#test
+car = Car("Toyota", 200)
+car.start_car()
+
+2. aggregation?
+Also a "Has-A" relationship, but the contained object can exist independently.
+
+Ex. a team has Players, but a Player can exist even without a team
+
+ex.
+class Player:
+    def __init__(self, name):
+        self.name = name
+    
+    def show (self):
+        print(f"Player: {self.name}")
+    
+class Team:
+    def __init__(self, team_name, players):
+        self.team_name = team_name
+        self.players = players    #aggregation here
+    
+    def show_team(self):
+        print(f"Team: {self.team_name}")
+        for p in self.players:
+            p.show()
+
+#test
+p1 = Player("Rohit")
+p2 = Player("Rahul")
+
+team = Team("India", [p1, p2])
+team.show_team()
+
+summary: composition v/s aggregation
+
+ownership - strong- object owns part - Weak-uses existing object
+
+Lifeline - Part dies with whole - part can live independently
+
+object Passed - created inside class - Passed from outside
+
+ex. - Car-Engine    -Team-Player
+
+
+practice task:
+create two examples:
+1. composition
+    class- Computer has a class CPU as part of it
+    CPU has method process()
+    Computer starts by calling CPU process method.
+
+2. aggregation
+    class -Library takes multiple book objects
+    show book list from library using aggregation
