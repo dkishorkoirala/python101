@@ -1,0 +1,67 @@
+Day 10
+we will coverr:
+what OOP is and why we use it
+what are classes and objects?
+what is self and __init__()
+how to create your own simple class and use it
+practise problems with solutions
+
+Step 1: what is OOP?
+- OOP( object oriente programming ) is a way of writing programs using objects- like real-world things
+a car, a person, a book
+
+we group data (attributes) and actions(methods) together.
+
+real world ex.
+-object : car
+-attributes: color, brand, year
+-method: drive(), break(),horn()
+
+so intead of:
+car_color = "red"
+car_speed = 60
+
+we write:
+class Car:
+    def __init__(self, color, speed):
+        self.color = color
+        self.speed = speed
+
+step 2: building your first class
+- class + object example
+
+class Person: 
+    def __init__(self, name, age):
+        self.name = name    #attribute
+        self.age = age      #attribute
+    
+    def say_hello(self):    #method
+        print(f"Hello, My name is {self.name}, and i am {self.age} years young.")
+    
+#creating an object
+p1 = Person("Ram", 22)
+
+#calling method
+p1.say_hello()
+
+output:
+Hello, My name is Ram, and i am 22 years young.
+
+Explaination:
+concept == meaning
+class == Blueprint(like a design)
+__init__() == constructor. runs when we create the object
+self == refers to the object itself
+p1 == an object(instance) of the class Person
+
+Step 3: try it yourself
+practice task 1:
+make a class called Dog with:
+    -attribute: name, breed
+    -method: bark() that prints: "Woof! I am {name} the {breed} dog."
+
+challenge:
+Make another class called Cat with:
+attribute: name and color
+A method meow() that prints "Meow! I am {name}, a {color} cat."
+A method introduce() just like before

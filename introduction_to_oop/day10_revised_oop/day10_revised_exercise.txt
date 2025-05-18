@@ -1,0 +1,105 @@
+Review: class, Object, Attribute, Methods
+
+class = Blueprint or Design
+Object = actual thing created from the Blueprint
+__init__() = constructor that runs when object is created.
+self = refers to the current object (object calling the method)
+Attributes = variables inside a class.
+Mthods= function inside a class
+
+ex:1. crate a car class
+
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    
+    def drive(self):
+        print(f"The {self.brand} {self.model} is driving")
+
+#creating an object
+car1 = Car("Toyota", "Camry")
+car2 = Car("Tesla", "Model s")
+
+car1.drive()
+car2.drive()
+
+output:
+The Toyota Camry is driving
+The Tesla Model s is driving
+
+ex-2: create a student Class:
+class Student:
+    def __init__(self, name , grade):
+        self.name = name
+        self.grade = grade
+    
+    def intro(self):
+        print(f"Myself {self.name}, I study in Grade: {self.grade}")
+    
+
+#test
+student1 = Student("Rahul", "10th")
+student2 = Student("samir", "7th")
+
+student1.intro()
+student2.intro()
+
+output:
+Myself Rahul, I study in Grade: 10th
+Myself samir, I study in Grade: 7th
+
+ex-3: Simple Calculator class
+class Calculator:
+    def __init__(self, a , b):
+        self.a = a
+        self.b = b
+    
+    def add(self):
+        return self.a + self.b
+    
+    def multiply(self):
+        return self.a * self.b
+    
+#creating object and using methods
+calc = Calculator(2,6)
+print("Sum of two numbers are: ", calc.add())
+print("Multiplication of two numbers are: ", calc.multiply())
+
+ex-4: Movie Calss with show method()
+class Movie:
+    def __init__(self, title, director, year):
+        self. title = title
+        self. director = director
+        self.year = year
+    
+    def show(self):
+        print(f"Move: {self.title}, Director: {self.director}, Year: {self.year}")
+    
+m1 = Movie("Inception", "Christopher Nolan", 2010)
+m1.show()
+
+m2 = Movie("3 Idiot", "Rajkumar Hirani", 2009)
+m2.show()
+
+output:
+Move: Inception, Director: Christopher Nolan, Year: 2010
+Move: 3 Idiot, Director: Rajkumar Hirani, Year: 2009
+
+Try-it-yourself:
+Task1:
+make a class called BankAccount with:
+    -attribute: owner, balance
+    -method: display(), that prints"{owner} has {balance} in account."
+
+Task 2:
+make a class called Book with:
+-attribute: title, author
+-method: display(), that prints "Reading {title} by {author}..."
+
+Task 3:
+make a class called Laptop with:
+    - attribute: brand, price
+    - method: details(), that prints: "This is a {brand} laptop that costs {price}."
+
+
