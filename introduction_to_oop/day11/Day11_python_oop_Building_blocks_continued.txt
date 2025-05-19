@@ -1,0 +1,56 @@
+Day 11: Python OOP - building Blocks continued
+
+we'll cover
+
+1. more on attributes and methods.
+2. Understanding encapsulation(hiding data with private variables)
+3. Using getters and setters to safely access private data.
+
+First, quick recap of attributes and methods,
+-attributes : variables inside a class to hold data about the object.
+-methods: Functions inside a class that define behaviours.
+
+ex.1 : Person class with private attributes and getter/setter
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.__age = age
+
+    #getter method to access private __age
+    def get_age(self):
+        return self.__age
+
+    #setter method to safely update private __age
+    def set_age(self, new_age):
+            if new_age > 0:
+                self.__age = new_age
+            else:
+                print("Age must be positive")
+    
+    def show_info(self):
+        print(f"Name: {self.name}, Age: {self.__age}")
+
+
+#test
+p1 = Person("Ram", 23)
+p1.show_info()
+#output  Name : Ram , Age : 23
+
+print (p1.get_age()) #23
+p1.set_age(30)
+print(p1.get_age()) # 30
+
+p1.set_age(-5)
+# output Age must be positive
+
+why private attributes?
+-it stops outside code from changing __age directly.
+-keeps data safe and controlled via getter/setter methods.
+
+practice for you:
+try to create a car class with:
+-private attribute __speed
+-getter method get_speed()
+-setter method set_speed(new-speed) that only accepts positive values.
+-a method show-speed() that prints the speed

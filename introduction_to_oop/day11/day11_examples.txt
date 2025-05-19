@@ -1,0 +1,42 @@
+ex. 1 BankAccount with Private Balance
+
+create a BankAccount class:
+
+-private attribute: __balance
+-public attribute : owner
+get method: set_balance(amount) to only allow positive amounts
+(print error if negative)
+
+method deposti(amount) to add money
+method withdraw(amount) to subtract money if sufficient balance else print error
+method display() to show owner and current balance
+
+ex.2 = temperature Class with celsuis (private)
+
+create a temperature class:
+
+-private attribute: __celsuis()
+getter : get_celsuis()
+setter : set-celsuis(value) - only allows value above absolute zero (-273.15)
+method to farhenheit() that converts celsuis to farhenheit and returns it
+
+method show-temp() that prints temperature in celsuis and farhenheit
+
+ex. 3: Employee class with private salary
+create an employee class:
+-private attribute: __salary
+-public attribute: name
+-getter: get-salary()
+-setter: set-salary(new_salary) that only allows raise (new salary > current salary)
+
+method show_info() that prints name and salary
+
+bonus task : write a class libraryBook
+private attribute: __is_borrowed(true/false)
+public attribute: title, author
+
+methods:
+-borrow_book() - change status to borrowed if available, else print "already borrowed"
+-return_book() - change status to available
+-show_status()- print if book is available or borrowed
+
